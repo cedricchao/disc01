@@ -19,8 +19,8 @@ def data2array(filepath):
     >>> arr.shape[0]
     100000
     """
-    my_data = genfromtxt('data/restaurant.csv', delimiter=',',dtype = float)[1:]
-    return my_data
+    my_array = genfromtxt('data/restaurant.csv', delimiter=',',dtype = float)[1:]
+    return my_array
 
 
 def ends_in_9(arr):
@@ -36,10 +36,10 @@ def ends_in_9(arr):
     True
     """
     num1 = np.count_nonzero(arr)
-    my_data1 = arr*100
-    my_data2 = map(lambda x: round(x), my_data1)
-    try1 = map(lambda x: x%10==9, my_data2)
+    data1 = arr*100
+    data2 = map(lambda x: round(x), data1)
+    try1 = map(lambda x: x%10==9, data2)
     count = list(try1).count(True)
     count
-    proportion = count/num1
-    return proportion
+    prop = count/num1
+    return prop
